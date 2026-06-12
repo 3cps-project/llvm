@@ -13,7 +13,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   src = lib.fileset.toSource {
     root = ./.;
-    fileset = ./.;
+    fileset = lib.fileset.gitTracked ./.;
   };
   sourceRoot = "${finalAttrs.src.name}/llvm";
 
